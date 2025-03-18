@@ -12,7 +12,7 @@ pipeline {
          stage('Build') {
             steps {
                 build 'PES1UG22CS258-1'
-                sh 'g++ ./main/hello.cpp -o outputt' // Error: Incorrect output file name
+                sh 'g++ ./main/hello11.cpp -o outputt' // Error: Incorrect output file name
             }
          }
 
