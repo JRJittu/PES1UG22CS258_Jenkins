@@ -12,13 +12,13 @@ pipeline {
          stage('Build') {
             steps {
                 build 'PES1UG22CS258-1'
-                sh 'g++ ./main/hello.cpp -o output'
+                sh 'g++ ./main/hello.cpp -o outputt' // Error: Incorrect output file name
             }
          }
 
          stage('Test') {
             steps {
-                sh './output'
+                sh './output' // Error: The file was compiled as 'outputt', so this will fail
             }
          }
 
@@ -31,7 +31,7 @@ pipeline {
    
     post {
         failure {
-            error 'Pipeline failed'
+            echo 'Pipeline failed' // Fixed incorrect use of 'error'
         }
     }
 }
